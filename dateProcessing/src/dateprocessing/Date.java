@@ -18,13 +18,7 @@ public class Date {
         31, 30, 31}; // class constant
 //******************************************************************************
 
-    public void printResults() {
-        System.out.println("Date " + month + "/" + day + " is "
-                        + MONTHS[month] + " " + day);
-    } // end printResults method
-//******************************************************************************
-
-    public Date(String dateStr) {
+    public void Date(String dateStr) {
         int slashIndex;
         String currentStringToProcess = "";
         try {
@@ -35,21 +29,19 @@ public class Date {
             currentStringToProcess = dateStr.substring(slashIndex + 1);
             day = Integer.parseInt(currentStringToProcess);
             if (month > 12 || month < 1) {
-                error = ("Invalid month " + month + " for day " + day
+                System.out.println("Invalid month " + month + " for day " + day
                         + ", try again");
             } else if (day > DAYSPERMONTH[month] || day < 1) {
-                error = ("Invalid day " + day + " for month " + month
+                System.out.println("Invalid day " + day + " for month " + month
                         + ", try again");
-            }// end if/else if conditions
+            } else {
+                System.out.println("Date " + month + "/" + day + " is "
+                        + MONTHS[month] + " " + day);
+            }// end if/else if/else conditions
         } catch (NumberFormatException e) {
             System.out.println("Invalid format - For input string: "
                     + "\"" + currentStringToProcess + "\"");
         } // end try/catch exception handling
-    } // end Date constructor
-//******************************************************************************
-
-    public String getError() {
-        return error;
-    } // end getError method
+    } // end Date constructor method
 //******************************************************************************
 } // end Date class
