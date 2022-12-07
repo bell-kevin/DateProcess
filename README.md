@@ -1,6 +1,6 @@
 # DateProcess
 
-Date Processing. 
+Date Processing 
 
 Create a class named Date that stores date values and prints the date in numeric and alphabetic form. The user will enter a date in MM/DD form; the project will perform validation on the input, and if there are no errors, will print the date in alphabetic form. The errors include parsing problems trying to convert the values to integers and invalid values for month (must be 1 through 12) and day (must be appropriate for the month, so day 31 is not valid in month 2, for example).
 
